@@ -1,10 +1,10 @@
 import React from "react"
 
-function adventureLeague() {
+function AdventureLeague() {
         return (
             <div>
         <h1>Adventure League</h1>
         </div>
     )
 }
-export default adventureLeague;
+export default AdventureLeague;

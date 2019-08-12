@@ -7,8 +7,8 @@ import Adventureleague from "./components/AdventureLeague/AdventureLeague"
 
 export default (
     <switch>
-        <Route component = {Login} path = "/" />
-        <Route component = {Home} exact path = "/home" />
+        <Route component = {Home} path exact = "/" />
+        <Route component = {Login}  path = "/login" />
         <Route component = {Adventureleague} path = "/adventureleague" />
     </switch>
 )

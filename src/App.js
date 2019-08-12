@@ -2,20 +2,21 @@ import React, {Component} from 'react';
 import './App.css';
 import {HashRouter} from "react-router-dom"
 import routes from "./routes"
+import Nav from "./components/Nav/Nav"
+import {withRouter} from "react-router-dom"
 
-import Header from "./components/Header"
 
-export default class App extends Component {
+class App extends Component {
   render() {
 
     return (
       <HashRouter>
       <div className="App">
-    <Header/>
+      {this.props.location.pathname === "/login" ? null : <Nav/>}
     {routes}
     </div>
       </HashRouter>
   );
 }
 }
-
+export default withRouter(App)
