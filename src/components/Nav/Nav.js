@@ -1,10 +1,49 @@
-import React from "react"
+import React, {Component} from "react"
+import "./Nav.css"
+import {Link} from "react-router-dom"
+import { connect } from "react-redux"
+import {withRouter} from "react-router-dom"
 
-function Nav() {
+export default class Nav extends Component {
+
+
+    render() {
         return (
-            <div>
-        <h1>Nav</h1>
+            <div className="Nav_main">
+            <header className="Nav_Header">
+                <div className="Nav_Builders">
+                <div className="Nav_Hamburger">
+                    <h5>Menu</h5>
+                </div>
+                    <div className="Nav_Links">
+                        <h3>Home</h3>
+                    </div>
+                    <div className="Nav_Links">
+                        <h3>Adventure</h3>
+                    </div>
+                    <div className="Nav_Links">
+                        <h3>Custom</h3>
+                    </div>
+                    <div className="Nav_Links">
+                        <h3>Random</h3>
+                    </div>
+                </div>
+                <div className="Nav Login">
+                <Link to = "/login">
+                    <h3>Login/ Register</h3>
+                </Link>
+                </div>
+            </header>
+            <div id="dropdown" class="dropdown hide">
+                <div class="Nav_container">
+                    <li>Home</li>
+                    <li>Adenture</li>
+                    <li>Custom</li>
+                    <li>Random</li>
+                </div>
+            </div>
+
         </div>
     )
 }
-export default Nav;
+}
