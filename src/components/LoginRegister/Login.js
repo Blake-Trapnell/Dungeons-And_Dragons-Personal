@@ -42,8 +42,7 @@ registerUser = () => {
           } = this.state
         axios.post('/auth/login', {username, password, email})
         .then(res => {
-            console.log(res.data)
-            const{user_id} = res.data.user.user_id
+            const{user_id} = res.data.user
             this.props.setUser({username, user_id})
             this.props.history.push('/')
         })

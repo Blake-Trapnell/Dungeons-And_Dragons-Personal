@@ -21,6 +21,7 @@ app.use(express.json())
 
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
+app.get('/auth/checkloggedin', authCtrl.isLoggedIn)
 app.delete('/auth/logout', authCtrl.logout)
 app.get('/api/sheets', sheetsCtrl.getAllSheets)
 app.get('/api/sheets/:userid', sheetsCtrl.getByUserid)

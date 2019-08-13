@@ -4,7 +4,6 @@ module.exports = {
         const db = req.app.get('db')
         const {username, password, email} = req.body
         if (username === "" || password === "" || email === "") {
-            console.log('hit')
             return res.status(400).send({message: `Please fill out the required fields`})
         }
         const user = await db.find_username_and_email([username, email])
@@ -26,7 +25,6 @@ module.exports = {
         const db = req.app.get('db')
         const {username, password} = req.body
         const user = await db.find_username_and_hash([username])
-        console.log(user)
         if (user.length === 0) {
             return res.status(400).send({message: 'Username not found'})
         }
@@ -43,5 +41,12 @@ module.exports = {
     logout: (req,res) => {
         req.session.destroy()
         res.status(200).send({message: 'Logged out', loggedIn: false})
+    },
+
+    isLoggedIn: (req,res) => {
+            req.session.user ? 
+            res.status(200).send(req.session.user)
+            :
+            res.status(200).send({message: 'User log out'})
     }
 }

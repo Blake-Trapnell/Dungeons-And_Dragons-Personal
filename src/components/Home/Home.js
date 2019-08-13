@@ -1,6 +1,30 @@
 import React, { Component } from "react"
+import axios from "axios"
+import { setUser, setAllSheets, setUserSheets } from "../../ducks/reducer"
+import { connect } from "react-redux"
 
 class Home extends Component {
+    state = {
+        
+    }
+    
+    componentDidMount() {
+        this.loadingscreen()
+    }
+
+    loadingscreen = async () => {
+       let results = await  axios.get('/auth/checkloggedin')
+       const {username, email, user_id} = results.data
+       if (results.data.length > 0) {
+           let userResults = await axios.get(`/api/sheets/${user_id}`)
+           const {userSheets} = userResults.data
+           this.props.setUserSheets(userSheets)
+       }
+       let allResults = await axios.get(`/api/sheets`)
+    //    const{allSheets} = allResults.data
+       this.props.setUser({username, email, user_id})
+        // this.props.setAllSheets(allSheets)
+    }
 
     render() {
         return (
@@ -10,4 +34,9 @@ class Home extends Component {
         )
     }
 }
-export default Home;
+function mapStateToProps(state) {
+const {username, email, user_id} = state
+return {username, email, user_id}
+}
+
+export default connect(mapStateToProps,{setUser, setAllSheets, setUserSheets})(Home);
