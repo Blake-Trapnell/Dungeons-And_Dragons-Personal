@@ -21,7 +21,7 @@ Hash TEXT
 CREATE TABLE character_sheets (
 character_id SERIAL PRIMARY KEY,
 user_id INT REFERENCES users(user_id),
-sheet_id INT UNIQUE
+sheet_id SERIAL
 );
 
 CREATE TABLE ability_points (
@@ -139,20 +139,20 @@ INSERT INTO ability_points(strength, dexterity, wisdom, intelligence, charisma, 
 VALUES ( 14, 11, 9, 13, 16, 15, 1, 1);
 
 
-INSERT INTO class_race (user_id, character_name, class, level, background, playername, race, alignment)
-VALUES (1, 'Ion Steel', 'Cleric', 1, 'Knight', 'Blake Trapnell', 'Human', 'Chaotic Evil' );
+INSERT INTO class_race (user_id, character_name, class, level, background, playername, race, alignment, sheet_id)
+VALUES (1, 'Ion Steel', 'Cleric', 1, 'Knight', 'Blake Trapnell', 'Human', 'Chaotic Evil', 1 );
 
 
-INSERT INTO dex_profs (user_id, acrobatics, sleight_of_hand, stealth)
-VALUES (1, false, false, false);
+INSERT INTO dex_profs (acrobatics, sleight_of_hand, stealth, user_id, sheet_id)
+VALUES ( false, false, false, 1, 1);
 
 
-INSERT INTO str_profs (user_id, athletics)
-VALUES (1, false);
+INSERT INTO str_profs (athletics, user_id, sheet_id)
+VALUES (false, 1 , 1);
 
 
-INSERT INTO wis_profs (user_id, animal_handling, insight, medicine, perception, survival)
-VALUES (1, false, false, true, false, false);
+INSERT INTO wis_profs (animal_handling, insight, medicine, perception, survival, user_id, sheet_id)
+VALUES (false, false, true, false, false, 1, 1);
 
 
 INSERT INTO int_profs (user_id, arcana, history, investigation, nature, religion, sheet_id)
@@ -165,3 +165,9 @@ VALUES (1, false, false, false, true, 1);
 
 INSERT INTO character_info (user_id, person_traits, Ideals, bonds, flaws, sheet_id)
 VALUES (1, 'Personality Traits', 'Ideals', 'Bonds', 'Flaws', 1);
+
+INSERT INTO atks_spells (user_id, sheet_id, attacks, spells, feats, traits)
+VALUES (1, 1, 'attack', 'spell', 'feats', 'traits')
+
+INSERT INTO additional_info (user_id, sheet_id, armor_class, initiative, speed, hitdice, equipment)
+VALUES (1, 1, 18, 0, 30, 8, 'equipment')

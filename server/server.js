@@ -4,6 +4,7 @@ const express = require('express')
 const massive = require('massive')
 const session = require('express-session')
 const authCtrl = require('./Controllers/authController')
+const sheetsCtrl = require('./Controllers/sheetsController')
 const {SERVER_PORT, CONNECTION_STRING, SECRET} = process.env
 const PORT = SERVER_PORT || 4311
 const app = express()
@@ -21,6 +22,8 @@ app.use(express.json())
 app.post('/auth/register', authCtrl.register)
 app.post('/auth/login', authCtrl.login)
 app.delete('/auth/logout', authCtrl.logout)
+app.get('/api/sheets', sheetsCtrl.getAllSheets)
+app.get('/api/sheets/:userid', sheetsCtrl.getByUserid)
 
 massive(CONNECTION_STRING).then(db => {
     app.set ('db',db)
