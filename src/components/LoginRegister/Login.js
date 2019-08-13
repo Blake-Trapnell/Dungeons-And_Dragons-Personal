@@ -1,23 +1,58 @@
-import React from "react"
+import React, {Component} from "react"
 import "./Login.css"
+import axios from "axios"
+import { setUser } from "../../ducks/reducer"
+import { connect } from "react-redux"
 
-function Login() {
-    return (
-        <div>
+class Login extends Component {
+    state = {
+        usernameInput: '',
+        emailInput: '',
+        passwordInput: ''
+       }
+
+handleChange(e,key) {
+    this.setState({
+        [key]: e.target.value
+    })
+}
+
+registerUser = () => {
+    const {
+      usernameInput: username,
+      passwordInput: password,
+      emailInput: email,
+    } = this.state
+    axios.post('/auth/register', { username, password, email})
+      .then(res => {
+          const {user_id} = res.data.user.user_id
+        this.props.setUser({username, email, user_id})
+        this.props.history.push('/')
+      })
+      .catch(err => {
+        alert('username & or email is already in use.')
+      })
+    }
+
+    render() {
+
+        return (
+            <div>
             <div className="Login_Outer">
                 <div className="Login_main">
-                    <h1>Ace's Dungeons And Dragons Login/Register</h1>
+                    <h1>Ace's Dungeons And Dragons <p>
+                    Character Creater </p> </h1>
                     <div className="Login_Input_Container">
-                        <input className="Login_Inputs" type="text" placeholder="Username" />
-                        <input className="Login_Inputs" type="text" placeholder="Email" />
-                        <input className="Login_Inputs" type="text" placeholder="Password" />
+                        <input onChange ={e => this.handleChange(e, "usernameInput")} className="Login_Inputs" type="text" placeholder="Username" />
+                        <input onChange ={e => this.handleChange(e, "emailInput")} className="Login_Inputs" type="text" placeholder="Email" />
+                        <input onChange ={e => this.handleChange(e, "passwordInput")} className="Login_Inputs" type="text" placeholder="Password" />
                     </div>
-                    <div className="Login_Buttons">
+                    <div className="Login_Button_container">
                         <div>
-                        <button>Login</button>
+                        <button className="Login_Button" >Login</button>
                         </div>
                         <div>
-                        <button>Register</button>
+                        <button className="Login_Button" onClick ={this.registerUser} >Register</button>
                         </div>
                     </div>
                 </div>
@@ -26,4 +61,6 @@ function Login() {
         </div>
     )
 }
-export default Login;
+}
+export default connect(null,
+    {setUser})(Login);

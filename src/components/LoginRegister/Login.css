@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Metamorphous&display=swap');
 .Login_Outer {
     display: flex;
     justify-content: center;
@@ -8,6 +9,7 @@
 }
 
 .Login_main {
+    font-family: 'Metamorphous', cursive;
     height: 90%;
     width: 70%;
     display: flex;
@@ -33,11 +35,28 @@
     width: 80%;
     height: 10%;
     text-align: center;
+    border: 2px rgb(175, 175, 175) solid;
+    border-radius: 5px;
+    background: linear-gradient(135deg, rgb(39, 15, 15), rgb(139, 4, 4));
+    color: rgb(226, 224, 224);
+    font-size: 1.3rem;
 }
 
-.Login_Buttons {
+.Login_Button_container {
     height: 30%;
     width: 50%;
     display: flex;
     justify-content: space-between;
+}
+
+.Login_Button {
+    font-family: 'Metamorphous', cursive;
+    background-color: rgb(37, 37, 37);
+    height: 2rem;
+    width: 5rem;
+    color: white;
+    border-radius: 5px;
+    box-shadow: 2px 2px 3px 2px rgb(65, 13, 13);
+    border: 2px black;
+    border-style: none solid solid none
 }
