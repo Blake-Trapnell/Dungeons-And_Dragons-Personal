@@ -5,7 +5,8 @@
     align-items: center;
     height: 100vh;
     width: 100vw;
-    background: rgb(196, 195, 195);
+    background-image: url("https://lh3.googleusercontent.com/Cv-_I_EzxVs6jC0hOp7ft9hV8uM8-Ntwmfedb349JWPE3zEMdJTjo08emAc_LYPKOqXcfuhPjK3UkoPLyW6u5jStY3ulgmSV6_C9BUMsAaTY2l6JSxwvdCAlescNGraAjQ59T2UXhKtXlJFVo86kkOP0K8HFWgji4PuADsO3kdHLEAS63NBkzA_rUp8eSZ1XUxPPE0NrdVoPTA0QFNLbjhCQgMhAUMlzWnstM0bRhqX34VEV20pu2p-9GHDjOfM-n3qJbyZOwvzqUBTbCUpxdDpNlCmvkAJv8RoQIM9GufKoFs6-FIMcBM6_yH1cobhe7yexfY5JGi_87V8RgxVqqQotJIa8xlm3O34ToockdYD4JspSuLHzOLdkEOxcnYEPdxt4haateUxfEn2PMOC04i351F4CCayQoDUwIltsH8jUgJlFtxtWt5OW0RDJtwsmx-PaFft7ylcXL3S9Q6fGeqRFbeodbZFU3p2FihJvDyCW2hMxU8P1biNbSovkWnED_vHbMAvulfrorGCLTUUipZp_U-XC_COSP95ZMy63EV2e_fCPBBtKY_cgobPg5w9OBsNidW-pc8YjP1Re_Xcz9wChnHc2ZMjqxF54qIt2etpoUmL9g-WksuVTwul78gFHE5SZWL0edYzj6ylMeTBcZ2DeEVkzPLI=w910-h975-no");
+    background-size: cover;
 }
 
 .Login_main {
@@ -18,7 +19,7 @@
     align-items: center;
     background: linear-gradient(135deg, rgba(190, 68, 68, 0.911), rgb(102, 3, 3) 70.71%);
     border-radius: 20px;
-    box-shadow: 10px 20px 8px 3px #888888;
+    box-shadow: 5px 10px 4px 1px #292929;
 }
 
 .Login_Input_Container {
@@ -59,4 +60,11 @@
     box-shadow: 2px 2px 3px 2px rgb(65, 13, 13);
     border: 2px black;
     border-style: none solid solid none
+}
+
+@media(max-width: 512px) {
+    .Login_main {
+        height: 100%;
+        width: 100%;
+    }
 }

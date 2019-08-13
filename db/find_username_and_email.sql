@@ -1,3 +1,3 @@
-SELECT * FROM users;
--- WHERE username = $1 OR
--- email = $2
+SELECT * FROM users
+WHERE username = $1 OR
+email ILIKE $2;

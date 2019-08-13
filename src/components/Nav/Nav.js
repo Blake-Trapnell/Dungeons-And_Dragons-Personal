@@ -1,8 +1,8 @@
 import React, {Component} from "react"
 import "./Nav.css"
 import {Link} from "react-router-dom"
-import { connect } from "react-redux"
-import {withRouter} from "react-router-dom"
+// import { connect } from "react-redux"
+// import {withRouter} from "react-router-dom"
 
 export default class Nav extends Component {
 
@@ -34,8 +34,8 @@ export default class Nav extends Component {
                 </Link>
                 </div>
             </header>
-            <div id="dropdown" class="dropdown hide">
-                <div class="Nav_container">
+            <div id="dropdown" className="dropdown hide">
+                <div className="Nav_container">
                     <li>Home</li>
                     <li>Adenture</li>
                     <li>Custom</li>
