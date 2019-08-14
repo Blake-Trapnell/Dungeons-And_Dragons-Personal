@@ -21,7 +21,7 @@ export default class Nav extends Component {
                         </Link>
                     </div>
                     <div className="Nav_Links">
-                        <Link to = "/adventureleague">
+                        <Link to = "/adventureleague/raceandclass">
                         <h3>Adventure</h3>
                         </Link>
                     </div>

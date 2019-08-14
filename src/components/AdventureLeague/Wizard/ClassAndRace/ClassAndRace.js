@@ -1,12 +1,12 @@
 import React, { Component } from "react"
 import axios from "axios"
-import { setUser, setWizardStepOne } from "../../ducks/reducer"
+import { setUser, setWizardStepOne } from "../../../../ducks/reducer"
 import { connect } from "react-redux"
-import "./AdventureLeague.css"
+import "./ClassAndRace.css"
 import { Link } from "react-router-dom"
 
 
-class Adventureleague extends Component {
+class RaceAndClass extends Component {
     state = {
         characterName: '',
         playerName: '',
@@ -128,4 +128,4 @@ function mapStateToProps(state) {
     }
 
 export default connect(mapStateToProps,
-    { setUser, setWizardStepOne })(Adventureleague);
+    { setUser, setWizardStepOne })(RaceAndClass);
