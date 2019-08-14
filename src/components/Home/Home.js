@@ -15,15 +15,18 @@ class Home extends Component {
     loadingscreen = async () => {
        let results = await  axios.get('/auth/checkloggedin')
        const {username, email, user_id} = results.data
-       if (results.data.length > 0) {
-           let userResults = await axios.get(`/api/sheets/${user_id}`)
-           const {userSheets} = userResults.data
-           this.props.setUserSheets(userSheets)
-       }
-       let allResults = await axios.get(`/api/sheets`)
-    //    const{allSheets} = allResults.data
        this.props.setUser({username, email, user_id})
-        // this.props.setAllSheets(allSheets)
+       if (username) {
+           let userResults = await axios.get(`/api/sheets/${user_id}`)
+            const userSheets = userResults.data
+           this.props.setUserSheets({userSheets})
+       }
+       else {
+           let allResults = await axios.get(`/api/sheets`)
+           console.log(allResults.data)
+              const allSheets = allResults.data
+           this.props.setAllSheets({allSheets})
+        }
     }
 
     render() {

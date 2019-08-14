@@ -18,12 +18,15 @@ export function setUser(user) {
     }
 }
 export function setAllSheets(allsheets) {
+    console.log('hit')
+    console.log(allsheets)
     return {
         type: SET_ALL_SHEETS,
         payload: allsheets
     }
 }
 export function setUserSheets(userSheets) {
+
     return {
         type: SET_USER_SHEETS,
         payload: userSheets
