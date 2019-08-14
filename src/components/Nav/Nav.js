@@ -16,10 +16,14 @@ export default class Nav extends Component {
                     <h5>Menu</h5>
                 </div>
                     <div className="Nav_Links">
+                        <Link to = "/">
                         <h3>Home</h3>
+                        </Link>
                     </div>
                     <div className="Nav_Links">
+                        <Link to = "/adventureleague">
                         <h3>Adventure</h3>
+                        </Link>
                     </div>
                     <div className="Nav_Links">
                         <h3>Custom</h3>
