@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import axios from "axios"
+// import axios from "axios"
 import { setUser, setWizardStepTwo} from "../../../../ducks/reducer"
 import { connect } from "react-redux"
 import "./AbilityPoints.css"
@@ -18,11 +18,11 @@ class AbilityPoints extends Component {
     }
 
     componentDidMount() {
-        axios.get('/auth/checkloggedin').then(res => {
-            const { username, email, user_id } = res.data
-            this.props.setUser({ username, email, user_id })
-        }
-        )
+        // axios.get('/auth/checkloggedin').then(res => {
+        //     const { username, email, user_id } = res.data
+        //     this.props.setUser({ username, email, user_id })
+        // }
+        // )
     }
 
     handleChange(key,e) {
@@ -160,7 +160,12 @@ class AbilityPoints extends Component {
                         </div>
                     </div>
                     <div className="Abilitypoints_Button_container">
+                        <Link to ="/adventureleague/archetype">
                         <button onClick={this.saveStepTwo} className="Abilitypoints_Navigation" >Next</button>
+                        </Link>
+                        <Link to = "/adventureleague/raceandclass">
+                            <button className="Abilitypoints_Navigation">Previous</button>
+                        </Link>
                         <Link to="/">
                             <button className="Abilitypoints_Navigation" >Cancel</button>
                         </Link>

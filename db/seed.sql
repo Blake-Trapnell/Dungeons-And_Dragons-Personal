@@ -52,6 +52,7 @@ sheet_id INT REFERENCES character_sheets(sheet_id));
 CREATE TABLE additional_info (
 info_id SERIAL PRIMARY KEY,
 user_id INT REFERENCES users(user_id),
+archetype VARCHAR(50),
 armor_class INT,
 initiative INT,
 speed INT,
@@ -169,5 +170,5 @@ VALUES (1, 'Personality Traits', 'Ideals', 'Bonds', 'Flaws', 1);
 INSERT INTO atks_spells (user_id, sheet_id, attacks, spells, feats, traits)
 VALUES (1, 1, 'attack', 'spell', 'feats', 'traits')
 
-INSERT INTO additional_info (user_id, sheet_id, armor_class, initiative, speed, hitdice, equipment)
-VALUES (1, 1, 18, 0, 30, 8, 'equipment')
+INSERT INTO additional_info (user_id, sheet_id, armor_class, initiative, speed, hitdice, equipment, archetype)
+VALUES (1, 1, 18, 0, 30, 8, 'equipment, "Life")

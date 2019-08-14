@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-import axios from "axios"
+// import axios from "axios"
 import { setUser, setWizardStepOne } from "../../../../ducks/reducer"
 import { connect } from "react-redux"
 import "./ClassAndRace.css"
@@ -17,11 +17,11 @@ class RaceAndClass extends Component {
     }
 
     componentDidMount() {
-        axios.get('/auth/checkloggedin').then(res => {
-            const { username, email, user_id } = res.data
-            this.props.setUser({ username, email, user_id })
-        }
-        )
+        // axios.get('/auth/checkloggedin').then(res => {
+        //     const { username, email, user_id } = res.data
+        //     this.props.setUser({ username, email, user_id })
+        // }
+        // )
     }
 
     handleChange(key,e) {
