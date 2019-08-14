@@ -10,6 +10,12 @@ const initialState = {
     playerClass: '',
     background: '',
     alignment: '',
+    str: '',
+    dex: '',
+    wis: '',
+    int: '',
+    cha: '',
+    con: '',
 
 }
 
@@ -17,6 +23,7 @@ const SET_USER = "SET_USER"
 const SET_ALL_SHEETS = "SET_ALL_SHEETS"
 const SET_USER_SHEETS = "SET_USER_SHEETS"
 const SET_WIZARD_STEP_ONE = "SET_WIZARD_STEP_ONE"
+const SET_WIZARD_STEP_TWO = "SET_WIZARD_STEP_TWO"
 
 export function setUser(user) {
     return {
@@ -43,6 +50,12 @@ export function setWizardStepOne(classAndRaceInfo) {
         payload: classAndRaceInfo
     }
 }
+export function setWizardStepTwo(abilitypoints){
+    return{
+        type: SET_WIZARD_STEP_TWO,
+        payload: abilitypoints
+    }
+}
 
 export default (state = initialState, action) => {
     const {type, payload} = action
@@ -59,6 +72,9 @@ export default (state = initialState, action) => {
             case SET_WIZARD_STEP_ONE :
                 const {characterName, playerName, race, playerClass, background, alignment} = payload
                 return {...state, characterName, playerName, race, playerClass, background, alignment}
+            case SET_WIZARD_STEP_TWO :
+                const {str, dex, wis, int, cha, con} = payload
+                return{...state, str, dex, wis, int, cha, con}
             default : return state
         }
     }

@@ -31,20 +31,23 @@ class RaceAndClass extends Component {
     }
 
     saveStepOne = () => {
-        if(this.race === "Race" || "" ) {
+        if(this.race === "Race") {
            return alert("Please select your race")
         }
-        else if(this.playerClass === "Class" || "") {
+        else if(this.playerClass === "Class") {
             return alert("Please select your class")
         }
-        else if (this.background === "Background" || "") {
+        else if (this.background === "Background") {
             return alert ('Please select your class')
         }
-        else if (this.alignment === "Alignment"|| "") {
+        else if (this.alignment === "Alignment") {
             return alert ('Please select your class')
         }
+        console.log('hit')
+        console.log(this.props)
         const {characterName, playerName, playerClass, race, alignment, background} = this.state
         this.props.setWizardStepOne({playerClass, background, alignment, race, characterName, playerName})
+        this.props.history.push("/adventureleague/abilitypoints")
     }
 
     render() {
