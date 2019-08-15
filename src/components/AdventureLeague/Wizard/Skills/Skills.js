@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-// import axios from "axios"
+import axios from "axios"
 import { setUser } from "../../../../ducks/reducer"
 import { connect } from "react-redux"
 import "./skills.css"
@@ -8,20 +8,17 @@ import { Link } from "react-router-dom"
 
 class Skills extends Component {
     state = {
-
+        skills: []
     }
 
     componentDidMount() {
-        this.getSkillOptions(this.props.playerClass)
+        axios.get(`/api/sheets/skills/${this.props.playerClass}`).then( res => {
+            this.setState({skills: res})
+        }
+            )
     }
 
-    getSkillOptions = (playerClass) => {
-        switch(playerClass) {
-            case "Barbarian" :
-               return console.log("Barbarian")
-               default : return "No class selected"
-        }
-    }
+
 
     render() {
         return (

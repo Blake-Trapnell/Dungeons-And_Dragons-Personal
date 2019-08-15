@@ -1,3 +1,3 @@
 select * from class_race_skills
-where wizard = TRUE
+where $1 = TRUE
 RETURNING skill;
