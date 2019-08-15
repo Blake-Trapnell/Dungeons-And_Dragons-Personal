@@ -2,35 +2,37 @@ import React, { Component } from "react"
 // import axios from "axios"
 import { setUser } from "../../../../ducks/reducer"
 import { connect } from "react-redux"
-import "./Archetype.css"
+import "./skills.css"
 import { Link } from "react-router-dom"
 
 
-class Archetype extends Component {
+class Skills extends Component {
     state = {
-        option1: '',
-        option2: '',
-        option3: '',
-        option4: '',
-        option5: '',
-        option6: '',
-    }
-    componentDidMount() {
-        const playerClass = this.props.playerClass
-        
 
+    }
+
+    componentDidMount() {
+        this.getSkillOptions(this.props.playerClass)
+    }
+
+    getSkillOptions = (playerClass) => {
+        switch(playerClass) {
+            case "Barbarian" :
+               return console.log("Barbarian")
+               default : return "No class selected"
+        }
     }
 
     render() {
         return (
-            <div className="Archetype_Outer">
-                <div className="Archetype_main">
-                    <div className="Archetype_Button_container">
+            <div className="Skills_Outer">
+                <div className="Skills_main">
+                    <div className="Skills_Button_container">
                         
-                        <Link to ="/adventureleague/skills">
+                        <Link to ="/adventureleague/equipment">
                         <button onClick={this.saveStepTwo} className="Abilitypoints_Navigation" >Next</button>
                         </Link>
-                        <Link to = "/adventureleague/abilitypoints">
+                        <Link to = "/adventureleague/archetype">
                             <button className="Abilitypoints_Navigation">Previous</button>
                         </Link>
                         <Link to="/">
@@ -44,9 +46,9 @@ class Archetype extends Component {
 }
 
 function mapStateToProps(state) {
-    const { playerClass} = state
-    return { playerClass}
+    const { playerClass, race} = state
+    return { playerClass, race}
 }
 
 export default connect(mapStateToProps,
-    { setUser})(Archetype);
+    { setUser})(Skills);

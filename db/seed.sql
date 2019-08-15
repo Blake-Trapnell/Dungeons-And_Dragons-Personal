@@ -1,3 +1,4 @@
+DROP TABLE class_race_skills;
 DROP TABLE atks_spells;
 DROP TABLE character_info;
 DROP TABLE cha_skills;
@@ -21,7 +22,7 @@ Hash TEXT
 CREATE TABLE character_sheets (
 character_id SERIAL PRIMARY KEY,
 user_id INT REFERENCES users(user_id),
-sheet_id SERIAL
+sheet_id SERIAL UNIQUE
 );
 
 CREATE TABLE ability_points (
@@ -128,6 +129,42 @@ user_id INT REFERENCES users(user_id),
 sheet_id INT REFERENCES character_sheets(sheet_id)
 );
 
+CREATE TABLE class_race_skills (
+skills_id SERIAL PRIMARY KEY,
+skill TEXT,
+barbarian BOOLEAN,
+bard BOOLEAN,
+cleric BOOLEAN,
+druid BOOLEAN,
+fighter BOOLEAN,
+monk BOOLEAN,
+paladin BOOLEAN,
+ranger BOOLEAN,
+rogue BOOLEAN,
+sorcerer BOOLEAN,
+warlock BOOLEAN,
+wizard BOOLEAN
+);
+
+CREATE TABLE background_skills (
+skills_id SERIAL PRIMARY KEY,
+skill TEXT,
+acoylte BOOLEAN,
+charlatan BOOLEAN,
+criminal_spy BOOLEAN,
+entertainer BOOLEAN,
+folk_hero BOOLEAN,
+guild_artisan BOOLEAN,
+hermit BOOLEAN,
+noble BOOLEAN,
+outlander BOOLEAN,
+sage BOOLEAN,
+sailor BOOLEAN,
+soldier BOOLEAN,
+urchin BOOLEAN
+);
+
+
 INSERT INTO users (username, email, hash)
 VALUES ('Aceassin', 'Blake.Trapnell103@gmail.com', '$2a$10$tBoYVjxZvEnMI6Lzpp/LQefE5RNrh9IZc4w7WOXgOOrvsuj6cWSka');
 
@@ -168,7 +205,47 @@ INSERT INTO character_info (user_id, person_traits, Ideals, bonds, flaws, sheet_
 VALUES (1, 'Personality Traits', 'Ideals', 'Bonds', 'Flaws', 1);
 
 INSERT INTO atks_spells (user_id, sheet_id, attacks, spells, feats, traits)
-VALUES (1, 1, 'attack', 'spell', 'feats', 'traits')
+VALUES (1, 1, 'attack', 'spell', 'feats', 'traits');
 
 INSERT INTO additional_info (user_id, sheet_id, armor_class, initiative, speed, hitdice, equipment, archetype)
-VALUES (1, 1, 18, 0, 30, 8, 'equipment, "Life")
+VALUES (1, 1, 18, 0, 30, 8, 'equipment', 'life');
+
+INSERT INTO class_race_skills (skill, barbarian, bard, cleric, druid, fighter, monk, paladin, ranger, rogue, sorcerer, warlock, wizard)
+VALUES ('Acrobatics', FALSE, TRUE, FALSE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE),
+('animal_handling', TRUE, TRUE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE),
+('Arcana', FALSE, TRUE, FALSE, TRUE, TRUE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE),
+('Athletics', True, true, false, false, true, true, true, true, true, false, false, false),
+('deception', false, true, false, false, false, false, false, false, true, true, true, false),
+('history', false, true, true, false, true, true, false, false, false, false, true, true),
+('insight', false, true, true, true, true, true, true, true, true, true, false, true),
+('intimidation', true, true, false, false, true, false, true, false, true, true, true, false),
+('investigation', false, true, false, false, false, false, false, true, true, false, true, true),
+('medicine', false, true, true, true, false, false, true, false, false, false, false, true),
+('nature', true, true, false, true, false, false, false, true, false, false, true, false),
+('perception', true, true, false, true, true, false, false, true, true, false, false, false),
+('performance', false, true, false, false, false, false, false, false, true, false, false, false),
+('persuassion', false, true, true, false, false, false, true, false, true, true, false, false),
+('religion', false, true, true, true, false, true, true, false, false, true, true, true),
+('sleight_of_hand', false, true, false, false, false, false, false, false, true, false, false, false),
+('stealth', false, true, false, false, false, true, false, true, true, false, false, false),
+('survival', true, true, false, true, true, false, false, true, false, false, false, false);
+
+INSERT INTO background_skills (skill, acoylte, charlatan, criminal_spy, entertainer, folk_hero, guild_artisan, hermit, noble, outlander, sage, sailor, Soldier, Urchin)
+VALUES ('Acrobatics', FALSE, FALSE, FALSE, TRUE , FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE),
+('animal_handling', FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE),
+('Arcana', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE),
+('Athletics', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, TRUE, TRUE, FALSE),
+('deception', FALSE, TRUE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE),
+('history', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE , FALSE, TRUE , FALSE, FALSE, FALSE),
+('insight', TRUE, FALSE, FALSE, FALSE, FALSE, TRUE , FALSE, FALSE, FALSE, FALSE, FALSE, TRUE , FALSE),
+('intimidation', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE),
+('investigation', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE ),
+('medicine', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE , FALSE, FALSE, FALSE, FALSE, FALSE, FALSE ),
+('nature', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE ),
+('perception', FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE , FALSE, FALSE ),
+('performance', FALSE, FALSE, FALSE, TRUE , FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE ),
+('persuassion', FALSE, FALSE, FALSE, FALSE, FALSE, TRUE , FALSE, TRUE , FALSE, FALSE, FALSE, FALSE, FALSE ),
+('religion', TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE ),
+('sleight_of_hand', FALSE, TRUE , FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE ),
+('stealth', FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, FALSE, TRUE ),
+('survival', FALSE, FALSE, FALSE, FALSE, TRUE, FALSE, FALSE, FALSE, TRUE , FALSE, FALSE, FALSE, FALSE);

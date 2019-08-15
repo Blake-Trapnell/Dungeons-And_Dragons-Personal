@@ -6,7 +6,7 @@ module.exports = {
         if (username === "" || password === "" || email === "") {
             return res.status(400).send({message: `Please fill out the required fields`})
         }
-        const user = await db.find_username_and_email([username, email])
+        const user = await db.get.find_username_and_email([username, email])
         if (user.length > 0) {
             return res.status(400).send({message: 'username & or email is in use'})
         }
@@ -18,13 +18,13 @@ module.exports = {
                 message: 'logged in',
                 user: req.session.user,
                 loggedIn: true
-            }).catch(err => res.status(500).send({message: 'Failed to register'}))
+            })
         
     },
     login: async (req, res) => {
         const db = req.app.get('db')
         const {username, password} = req.body
-        const user = await db.find_username_and_hash([username])
+        const user = await db.get.find_username_and_hash([username])
         if (user.length === 0) {
             return res.status(400).send({message: 'Username not found'})
         }

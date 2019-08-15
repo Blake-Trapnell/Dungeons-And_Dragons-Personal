@@ -13,13 +13,12 @@ ats.attacks, ats.spells, ats.feats, ats.traits
 FROM character_sheets c
 RIGHT JOIN class_race cr on c.sheet_id = cr.sheet_id
 RIGHT JOIN ability_points ap ON c.sheet_id = ap.sheet_id
-RIGHT JOIN dex_profs d ON c.sheet_id = d.sheet_id
-RIGHT JOIN str_profs s ON c.sheet_id = s.sheet_id
-RIGHT JOIN wis_profs w ON c.sheet_id = w.sheet_id
-RIGHT JOIN int_profs i ON c.sheet_id = i.sheet_id
-RIGHT JOIN cha_profs cp ON c.sheet_id = cp.sheet_id
+RIGHT JOIN dex_skills d ON c.sheet_id = d.sheet_id
+RIGHT JOIN str_skills s ON c.sheet_id = s.sheet_id
+RIGHT JOIN wis_skills w ON c.sheet_id = w.sheet_id
+RIGHT JOIN int_skills i ON c.sheet_id = i.sheet_id
+RIGHT JOIN cha_skills cp ON c.sheet_id = cp.sheet_id
 RIGHT JOIN character_info ci ON c.sheet_id = ci.sheet_id
 RIGHT JOIN additional_info ai ON c.sheet_id = ai.sheet_id
 RIGHT JOIN atks_spells ats ON c.sheet_id = ats.sheet_id
-ORDER BY c.sheet_id DESC
-LIMIT 20;
+WHERE c.user_id = $1;
