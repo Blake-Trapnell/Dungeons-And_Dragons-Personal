@@ -7,7 +7,7 @@ const initialState = {
     characterName: 'This Months Character',
     playerName: 'Ion Steel',
     race: 'Tiefling',
-    playerClass: 'Sorcerer',
+    playerClass: 'bard',
     background: 'Sage',
     alignment: 'Chaotic Good',
     str: 8,

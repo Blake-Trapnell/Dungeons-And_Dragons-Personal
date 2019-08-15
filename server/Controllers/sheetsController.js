@@ -13,8 +13,9 @@ module.exports = {
     getClassSkills: async (req,res) => {
             const db = req.app.get('db')
             const playerClass = req.params.playerclass
-            let skills = await db.skills.get_class_skills([playerClass])
-            console.log(skills)
+            console.log(playerClass)
+            const skills = await db.query(`select skill from class_race_skills
+            where ${playerClass} = true`)
             res.status(200).send(skills)
     }
 }

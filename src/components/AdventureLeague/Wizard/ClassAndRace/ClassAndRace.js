@@ -43,8 +43,6 @@ class RaceAndClass extends Component {
         else if (this.alignment === "Alignment") {
             return alert ('Please select your class')
         }
-        console.log('hit')
-        console.log(this.props)
         const {characterName, playerName, playerClass, race, alignment, background} = this.state
         this.props.setWizardStepOne({playerClass, background, alignment, race, characterName, playerName})
         this.props.history.push("/adventureleague/abilitypoints")

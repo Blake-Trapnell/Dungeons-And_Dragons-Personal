@@ -40,3 +40,19 @@ input {
     border-radius: 20px;
     box-shadow: 5px 10px 4px 1px #292929;
 }
+
+.Skills_Checkbox_Container {
+    height: 50%;
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: flex-start;
+}
+
+#Skills_Checkbox {
+    margin: 0 0 0 1px;
+    height: 40px;
+    width: 40px;
+}
