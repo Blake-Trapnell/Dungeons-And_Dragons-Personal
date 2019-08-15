@@ -1,10 +1,10 @@
 DROP TABLE atks_spells;
 DROP TABLE character_info;
-DROP TABLE cha_profs;
-DROP TABLE int_profs;
-DROP TABLE wis_profs;
-DROP TABLE str_profs;
-DROP TABLE dex_profs;
+DROP TABLE cha_skills;
+DROP TABLE int_skills;
+DROP TABLE wis_skills;
+DROP TABLE str_skills;
+DROP TABLE dex_skills;
 DROP TABLE additional_info;
 DROP TABLE class_race;
 DROP TABLE ability_points;
@@ -60,8 +60,8 @@ hitdice INT,
 equipment TEXT,
 sheet_id INT REFERENCES character_sheets(sheet_id));
 
-CREATE TABLE dex_profs (
-dex_prof_id SERIAL PRIMARY KEY,
+CREATE TABLE dex_skills (
+dex_skills_id SERIAL PRIMARY KEY,
 acrobatics BOOLEAN,
 sleight_of_hand BOOLEAN,
 stealth BOOLEAN,
@@ -69,15 +69,15 @@ user_id INT REFERENCES users(user_id),
 sheet_id INT REFERENCES character_sheets(sheet_id)
 );
 
-CREATE TABLE str_profs (
-str_prof_id SERIAL PRIMARY KEY,
+CREATE TABLE str_skills (
+str_skills_id SERIAL PRIMARY KEY,
 athletics BOOLEAN,
 user_id INT REFERENCES users(user_id),
 sheet_id INT REFERENCES character_sheets(sheet_id)
 );
 
-CREATE TABLE wis_profs (
-wis_prof_id SERIAL PRIMARY KEY,
+CREATE TABLE wis_skills (
+wis_skills_id SERIAL PRIMARY KEY,
 animal_handling BOOLEAN,
 insight BOOLEAN,
 medicine BOOLEAN,
@@ -87,8 +87,8 @@ user_id INT REFERENCES users(user_id),
 sheet_id INT REFERENCES character_sheets(sheet_id)
 );
 
-CREATE TABLE int_profs (
-int_prof_id SERIAL PRIMARY KEY,
+CREATE TABLE int_skills (
+int_skills_id SERIAL PRIMARY KEY,
 arcana BOOLEAN,
 history BOOLEAN,
 investigation BOOLEAN,
@@ -98,8 +98,8 @@ user_id INT REFERENCES users(user_id),
 sheet_id INT REFERENCES character_sheets(sheet_id)
 );
 
-CREATE TABLE cha_profs (
-cha_prof_id SERIAL PRIMARY KEY,
+CREATE TABLE cha_skills (
+cha_skills_id SERIAL PRIMARY KEY,
 deception BOOLEAN,
 intimidation BOOLEAN,
 performance BOOLEAN,
@@ -144,23 +144,23 @@ INSERT INTO class_race (user_id, character_name, class, level, background, playe
 VALUES (1, 'Ion Steel', 'Cleric', 1, 'Knight', 'Blake Trapnell', 'Human', 'Chaotic Evil', 1 );
 
 
-INSERT INTO dex_profs (acrobatics, sleight_of_hand, stealth, user_id, sheet_id)
+INSERT INTO dex_skills (acrobatics, sleight_of_hand, stealth, user_id, sheet_id)
 VALUES ( false, false, false, 1, 1);
 
 
-INSERT INTO str_profs (athletics, user_id, sheet_id)
+INSERT INTO str_skills (athletics, user_id, sheet_id)
 VALUES (false, 1 , 1);
 
 
-INSERT INTO wis_profs (animal_handling, insight, medicine, perception, survival, user_id, sheet_id)
+INSERT INTO wis_skills (animal_handling, insight, medicine, perception, survival, user_id, sheet_id)
 VALUES (false, false, true, false, false, 1, 1);
 
 
-INSERT INTO int_profs (user_id, arcana, history, investigation, nature, religion, sheet_id)
+INSERT INTO int_skills (user_id, arcana, history, investigation, nature, religion, sheet_id)
 VALUES (1, true, true, false, false, false, 1);
 
 
-INSERT INTO cha_profs (user_id, deception, intimidation, performance, persuassion, sheet_id)
+INSERT INTO cha_skills (user_id, deception, intimidation, performance, persuassion, sheet_id)
 VALUES (1, false, false, false, true, 1);
 
 
