@@ -29,9 +29,6 @@ class Skills extends Component {
         sleight_of_hand: false,
         stealth: false,
         survival: false,
-
-
-
     }
 
     componentDidMount() {
@@ -361,7 +358,7 @@ class Skills extends Component {
                         <Link to = "/adventureleague/abilitypoints">
                             <button className="Abilitypoints_Navigation">Previous</button>
                         </Link>
-                        <Link to ="/adventureleague/finish">
+                        <Link to ="/adventureleague/preview">
                         <button onClick={this.saveStepThree} className="Abilitypoints_Navigation" >Next</button>
                         </Link>
                     </div>

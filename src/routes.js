@@ -7,6 +7,7 @@ import Raceandclass from "./components/AdventureLeague/Wizard/ClassAndRace/Class
 import Abilitypoints from "./components/AdventureLeague/Wizard/AbilityPoints/AbilityPoints"
 import Archetype from "./components/AdventureLeague/Wizard/Archetype/Archetype"
 import Skills from "./components/AdventureLeague/Wizard/Skills/Skills"
+import Preview from "./components/AdventureLeague/Wizard/Preview/Preview"
 export default (
     <Switch>
         <Route component = {Home} path = "/" exact />
@@ -15,5 +16,6 @@ export default (
         <Route component = {Abilitypoints} path = "/adventureleague/abilitypoints"/>
         <Route component = {Archetype} path = "/adventureleague/archetype"/>
         <Route component = {Skills} path = "/adventureleague/skills"/>
+        <Route component = {Preview} path = "/adventureleague/preview"/>
     </Switch>
 )

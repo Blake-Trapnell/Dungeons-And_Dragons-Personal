@@ -12,7 +12,7 @@ class App extends Component {
     return (
       <HashRouter>
       <div className="App">
-      {this.props.location.pathname === "/login" || this.props.location.pathname === "/adventureleague" ? null : <Nav/>}
+      {this.props.location.pathname === "/login" || this.props.location.pathname === "/adventureleague" || this.props.location.pathname === "/adventureleague/preview" ? null : <Nav/>}
 
     {routes}
     </div>

@@ -15,11 +15,11 @@ class Archetype extends Component {
         option5: '',
         option6: '',
     }
-    componentDidMount() {
-        const playerClass = this.props.playerClass
+    // componentDidMount() {
+    //     const playerClass = this.props.playerClass
         
 
-    }
+    // }
 
     render() {
         return (
