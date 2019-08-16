@@ -160,14 +160,14 @@ class AbilityPoints extends Component {
                         </div>
                     </div>
                     <div className="Abilitypoints_Button_container">
-                        <Link to ="/adventureleague/archetype">
-                        <button onClick={this.saveStepTwo} className="Abilitypoints_Navigation" >Next</button>
+                        <Link to="/">
+                            <button className="Abilitypoints_Navigation" >Cancel</button>
                         </Link>
                         <Link to = "/adventureleague/raceandclass">
                             <button className="Abilitypoints_Navigation">Previous</button>
                         </Link>
-                        <Link to="/">
-                            <button className="Abilitypoints_Navigation" >Cancel</button>
+                        <Link to ="/adventureleague/skills">
+                        <button onClick={this.saveStepTwo} className="Abilitypoints_Navigation" >Next</button>
                         </Link>
                     </div>
                 </div>

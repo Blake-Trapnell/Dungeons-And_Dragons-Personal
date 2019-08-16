@@ -82,7 +82,9 @@ class RaceAndClass extends Component {
                             <option value="Soldier">Soldier</option>
                             <option value="Urchin">Urchin</option>
                         </select>
-                        <button onClick={this.saveStepOne} className="Adventure_Navigation" >Next</button>
+                        <Link to="/">
+                            <button className="Adventure_Navigation" >Cancel</button>
+                        </Link>
                     </div>
                     <div className="Adventure_Inner_Right">
                         <input onChange={e => this.handleChange("playerName",e.target.value)} type="text" placeholder="Player Name" className="Adventure_Input" />
@@ -113,9 +115,7 @@ class RaceAndClass extends Component {
                             <option value="Neutral Evil">Neutral Evil</option>
                             <option value="Chaotic Evil">Chaotic Evil</option>
                         </select>
-                        <Link to="/">
-                            <button className="Adventure_Navigation" >Cancel</button>
-                        </Link>
+                        <button onClick={this.saveStepOne} className="Adventure_Navigation" >Next</button>
                     </div>
                 </div>
             </div>

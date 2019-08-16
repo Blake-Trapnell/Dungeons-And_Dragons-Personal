@@ -26,6 +26,7 @@ app.delete('/auth/logout', authCtrl.logout)
 app.get('/api/sheets', sheetsCtrl.getAllSheets)
 app.get('/api/sheets/:userid', sheetsCtrl.getByUserid)
 app.get('/api/sheets/skills/:playerclass', sheetsCtrl.getClassSkills)
+app.get('/api/sheets/backgroundskills/:background', sheetsCtrl.getBackgroundSkills)
 
 massive(CONNECTION_STRING).then(db => {
     app.set ('db',db)

@@ -8,7 +8,7 @@ import { Link } from "react-router-dom"
 
 class Skills extends Component {
     state = {
-        chosenskills: null,
+        chosenSkills: null,
         availableSkills: null,
         amountOfSkills: 2,
         skills: {
@@ -22,12 +22,25 @@ class Skills extends Component {
     }
 
     componentDidMount() {
-        this.aosUpdate(this.props.playerClass)
-        axios.get(`/api/sheets/skills/${this.props.playerClass}`).then( res => {
-            this.setState({availableSkills: res.data,
-            })
+        this.loadPage()
+    }
+
+    loadPage = async () => {
+        const result1 = await axios.get(`/api/sheets/skills/${this.props.playerClass}`)
+        const result2 = await axios.get(`/api/sheets/backgroundskills/${this.props.background}`)
+       const classSkills = result1.data
+       const backgroundSkills = result2.data
+       console.log(backgroundSkills)
+       console.log(classSkills)
+        for(let i =0; i < classSkills.length; i++) {
+            if(classSkills[i].skill === backgroundSkills[0].skill || classSkills[i].skill === backgroundSkills[1].skill) {
+                classSkills.splice(i,1)
             }
-        )
+        }
+        this.setState({
+            availableSkills: classSkills,
+            chosenSkills: backgroundSkills
+        })
     }
 
     handleChange(e) {
@@ -168,10 +181,9 @@ class Skills extends Component {
             return 
         }
     }
-
-
     render() {
-        const {availableSkills} = this.state
+        const {availableSkills, chosenSkills} = this.state
+        console.log(availableSkills)
         return (
             <div className="Skills_Outer">
                 <div className="Skills_main">
@@ -188,15 +200,14 @@ class Skills extends Component {
                         }
                     </div>
                     <div className="Skills_Button_container">
-                        
-                        <Link to ="/adventureleague/equipment">
-                        <button onClick={this.saveStepTwo} className="Abilitypoints_Navigation" >Next</button>
-                        </Link>
-                        <Link to = "/adventureleague/archetype">
-                            <button className="Abilitypoints_Navigation">Previous</button>
-                        </Link>
                         <Link to="/">
                             <button className="Abilitypoints_Navigation" >Cancel</button>
+                        </Link>             
+                        <Link to = "/adventureleague/abilitypoints">
+                            <button className="Abilitypoints_Navigation">Previous</button>
+                        </Link>
+                        <Link to ="/adventureleague/finish">
+                        <button onClick={this.saveStepTwo} className="Abilitypoints_Navigation" >Next</button>
                         </Link>
                     </div>
                 </div>
@@ -206,8 +217,8 @@ class Skills extends Component {
 }
 
 function mapStateToProps(state) {
-    const { playerClass, race} = state
-    return { playerClass, race}
+    const { playerClass, race, background} = state
+    return { playerClass, race, background}
 }
 
 export default connect(mapStateToProps,
