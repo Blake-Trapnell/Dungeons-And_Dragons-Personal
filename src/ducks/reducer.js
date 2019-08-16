@@ -24,6 +24,7 @@ const SET_ALL_SHEETS = "SET_ALL_SHEETS"
 const SET_USER_SHEETS = "SET_USER_SHEETS"
 const SET_WIZARD_STEP_ONE = "SET_WIZARD_STEP_ONE"
 const SET_WIZARD_STEP_TWO = "SET_WIZARD_STEP_TWO"
+const SET_WIZARD_STEP_THREE = "SET_WIZARD_STEP_THREE"
 
 export function setUser(user) {
     return {
@@ -56,6 +57,12 @@ export function setWizardStepTwo(abilitypoints){
         payload: abilitypoints
     }
 }
+export function setWizardStepThree(skills) {
+    return{
+        type: SET_WIZARD_STEP_THREE,
+        payload: skills
+    }
+}
 
 export default (state = initialState, action) => {
     const {type, payload} = action
@@ -75,6 +82,11 @@ export default (state = initialState, action) => {
             case SET_WIZARD_STEP_TWO :
                 const {str, dex, wis, int, cha, con} = payload
                 return{...state, str, dex, wis, int, cha, con}
+            case SET_WIZARD_STEP_THREE: 
+            const {acrobatics, arcana, animal_handling, athletics, deception, history, insight, intimidation, investigation, medicine,
+                nature, perception, performance, persuassion, religion, sleight_of_hand, stealth, survival} = payload
+                return {...state, acrobatics, arcana, animal_handling, athletics, deception, history, insight, intimidation, investigation, medicine,
+                    nature, perception, performance, persuassion, religion, sleight_of_hand, stealth, survival}
             default : return state
         }
     }

@@ -20,6 +20,7 @@ module.exports = {
     getBackgroundSkills: async (req,res) => {
         const db = req.app.get('db')
         const background = req.params.background
+        console.log(background)
         const skills = await db.query(`select skill from background_skills
         where ${background} = true`)
         res.status(200).send(skills)

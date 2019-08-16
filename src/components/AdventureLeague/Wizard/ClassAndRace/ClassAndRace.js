@@ -70,10 +70,10 @@ class RaceAndClass extends Component {
                             <option value="Background">Background</option>
                             <option value="Acolyte">Acoylte</option>
                             <option value="Charlatan">Charlatan</option>
-                            <option value="Criminal/spy">Criminal / Spy</option>
+                            <option value="Criminal_spy">Criminal / Spy</option>
                             <option value="Entertainer">Entertainer</option>
-                            <option value="Folk Hero">Folk Hero</option>
-                            <option value="Guild Artisan">Guild Artisan</option>
+                            <option value="Folk_Hero">Folk Hero</option>
+                            <option value="Guild_Artisan">Guild Artisan</option>
                             <option value="Hermit">Hermit</option>
                             <option value="Noble">Noble</option>
                             <option value="Outlander">Outlander</option>
