@@ -38,20 +38,26 @@ input {
     flex-wrap: wrap;
     border-radius: 20px;
     box-shadow: 5px 10px 4px 1px #292929;
-    background-color: rgb(241, 241, 241);
+    background: linear-gradient(135deg, rgba(190, 68, 68, 0.9), rgb(54, 2, 2, .8) 70.71%);
+    /* background-image: url('https://lh3.googleusercontent.com/-A_2dlS5h19M73GAh1hxHv0orAJ95FAyfxyLAqwrFP1IAWh7tYOOIuJs9vr_z4OsuS3eK8ZtTC4VOp1bf_HlKjc67-Akj9G5dFG34WS8CD8gv2Q2BZhl6ghs5A7gbcPbB_1_5MeZf2i5G_7kHgut6cAsKpNqKzYU82gLYIUsGF1FABIwonzTdOI___eupufNX0G6w6Uul_EieO6ND8fzCeGgUqdoCG1uFnGTvvZDtBdpjqtjt0UKWdtrr9RQiF8F3jOeCXJjg53JkiNr5cskrxWz10pxKQUBbWdurWQzw2gXrRgdBpW0TOAKW-cMJuPxAmItf5mF040zsBZm3VPCWytvMQiXz2aH50A9klnIQLCGpkAJwTFg1fIUlaH0f0xPwhAzET5XNQxzYCE2zHF5qbzJHCZHjQb04HncAiCduXMZTOkj40pG2aiS4xNIq85c88ZiVSagmWN7Jox5bu5UigIU1h6vCg86xd-duIWxPZRB1r5n_IfoiwFlRdsZ0rAJiNGpDPaINDNTuDx--W0EeX1KasI4mnfhymem0XtPw0s1cWuDt9ZpluDVOJk7JIFmmHEQqqUS6Q1qNEf6lMVqhDUye-G2j7w_QRz0e2sJlFgGuzfxrZjUoL2jRLsWE_bBSPZXEv6_WbmxCpLIY9Fr4ikbx1weZx0=w1331-h926-no');
+    background-size: cover;
+    background-repeat: no-repeat; */
 }
 
 .Preview_Sheet {
     height: 100%;
     width: 500px;
-    background-image: url('https://lh3.googleusercontent.com/MbFZ9p5wAtaOk6Pe0zbjtLM7vHXW9UpA2lqNuz9rqC8C45w27XNo5yY7rdQM_zuZPcf_B8fhrbvDYx1j2p9kpXrITbJVQPqF5OpJIwOHw8Y7OKCsKhkJ4BIMCsi0-ErM6UVm-ZJ5eBiVDTz5Jo21__hJt1ubNz3-ne55-ZNfMeINjO4juMvsN1vAe-Zm0sf_b-L29vHTQI4OAJK0FM8XGymsA3em1KIXcqrWykXmbgJQNJM7cr71oMTT_SUwn1DAVHuXAI0pMQGeFfqULaKw6r-5WRlpAbmF9ed3gRq7AgsBBKW6sJDfYH0g-lk-Dx5Vx2S5hIpanwof66GNZYH66-gVC9lDwujgw0cVTu5etrWtq9UZh7-gA4lBARaPkiJxXGeiqU3krBcbQUISgXgLMXYF4_muAPMoTrsVDODhSxfs7q8eCArDuzdKmjHTf3O_oc5JSSyzetBvBfW-wDQvcME1g0Ryf0wcepVy3eGtrrlajADbdI9_dij43Jb0dPOP9hK_QdAXvoPrbZVYt0wKz21OGjpOHggLi_Ky7hSFdd8r2SnBThUkjoU7I8dO-TbUoIrniEQrBAWP8BRL9-z_jfHRKgL1ft4lQd_jWZx63q5lhbeR968vCj5BeUlLcwVyYGV1cJbSVmZ1E0O-tV1zRc_72NzemYA=w625-h808-no');
-    background-size: contain;
     background-repeat: no-repeat;
     display: flex;
+    position: relative;
+    top: 7%;
+    align-items: center;
     flex-direction: column;
+    /* background-image: url('https://lh3.googleusercontent.com/MbFZ9p5wAtaOk6Pe0zbjtLM7vHXW9UpA2lqNuz9rqC8C45w27XNo5yY7rdQM_zuZPcf_B8fhrbvDYx1j2p9kpXrITbJVQPqF5OpJIwOHw8Y7OKCsKhkJ4BIMCsi0-ErM6UVm-ZJ5eBiVDTz5Jo21__hJt1ubNz3-ne55-ZNfMeINjO4juMvsN1vAe-Zm0sf_b-L29vHTQI4OAJK0FM8XGymsA3em1KIXcqrWykXmbgJQNJM7cr71oMTT_SUwn1DAVHuXAI0pMQGeFfqULaKw6r-5WRlpAbmF9ed3gRq7AgsBBKW6sJDfYH0g-lk-Dx5Vx2S5hIpanwof66GNZYH66-gVC9lDwujgw0cVTu5etrWtq9UZh7-gA4lBARaPkiJxXGeiqU3krBcbQUISgXgLMXYF4_muAPMoTrsVDODhSxfs7q8eCArDuzdKmjHTf3O_oc5JSSyzetBvBfW-wDQvcME1g0Ryf0wcepVy3eGtrrlajADbdI9_dij43Jb0dPOP9hK_QdAXvoPrbZVYt0wKz21OGjpOHggLi_Ky7hSFdd8r2SnBThUkjoU7I8dO-TbUoIrniEQrBAWP8BRL9-z_jfHRKgL1ft4lQd_jWZx63q5lhbeR968vCj5BeUlLcwVyYGV1cJbSVmZ1E0O-tV1zRc_72NzemYA=w716-h926-no');
+    background-size: contain; */
 }
 
-@media(max-width: 512px) {
+@media(max-width: 650px) {
     .Preview_main {
         height: 100%;
         width: 100%;
@@ -61,6 +67,39 @@ input {
 .Preview_Header {
     height: 9%;
     width: 100%;
+    border: Black 1px solid;
+    display: flex;
+    align-items: center;
+}
+
+.Preview_Character_Name {
+    height: 50%;
+    width: 40%;
+    border: blue 1px solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    left: 2%;
+}
+
+.Preview_Character_Info {
+    height: 95%;
+    width: 55%;
+    border: blue 1px solid;
+    display: flex;
+    flex-wrap: wrap;
+    position: relative;
+    left: 3%;
+}
+
+.Preview_Character_Info_Box {
+    height: 49%;
+    width: 32%;
+    border: 1px solid blue;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Preview_Main_Body {
@@ -119,6 +158,9 @@ input {
     width: 100%;
     height: 16%;
     border: 1px brown solid;
+    display: flex;
+    justify-content: center;
+    align-items: center;
 }
 
 .Preview_Skills_Column_Second {
@@ -149,6 +191,59 @@ input {
 
 .Preview_Skills {
     width: 100%;
-    height: 60%;
+    height: 100%;
     border: 1px brown solid;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    background: rgba(255, 255, 255, 0.404)
+}
+
+.Preview_Individual_Skill {
+    height: 5%;
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+}
+
+.Preview_Middle_One {
+    height: 10%;
+    width: 100%;
+    border: 1px purple solid;
+}
+
+.Preview_Middle_Two {
+    height: 17%;
+    width: 100%;
+    border: 1px purple solid;
+}
+
+.Preview_Middle_Three {
+    height: 9%;
+    width: 100%;
+    border: 1px purple solid;
+}
+
+.Preview_Middle_Four {
+    height: 28%;
+    width: 100%;
+    border: 1px purple solid;
+}
+
+.Preview_Middle_Five {
+    height: 34%;
+    width: 100%;
+    border: 1px purple solid;
+}
+
+.Preview_Personality {
+    height: 35%;
+    width: 100%;
+    border: 1px rgb(33, 161, 8) solid;
+}
+
+.Preview_Traits {
+    height: 64%;
+    width: 100%;
+    border: 1px rgb(33, 161, 8) solid;
 }

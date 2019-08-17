@@ -57,8 +57,6 @@ registerUser = () => {
             <div>
             <div className="Login_Outer">
                 <div className="Login_main">
-                    <h1>Ace's Dungeons And Dragons <p>
-                    Character Creater </p> </h1>
                     <div className="Login_Input_Container">
                         <input onChange ={e => this.handleChange(e, "usernameInput")} className="Login_Inputs" type="text" placeholder="Username" />
                         <input onChange ={e => this.handleChange(e, "emailInput")} className="Login_Inputs" type="text" placeholder="Email" />
