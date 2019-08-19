@@ -3,7 +3,7 @@ import axios from "axios"
 import { setUser, setAllSheets, setUserSheets } from "../../../ducks/reducer"
 import { connect } from "react-redux"
 import "./SheetsDemo.css"
-import {Link} from "react-router-dom"
+import { Link } from "react-router-dom"
 
 class Sheets extends Component {
     state = {
@@ -46,23 +46,27 @@ class Sheets extends Component {
         return (
             <div className="Sheets">
                 <div className="Sheets_Main_Screen">
-                    {this.state.userSheets ? this.state.userSheets.map(el => 
+                    {this.state.userSheets ? this.state.userSheets.map(el =>
                         <div className="SheetsDemo_CharacterList" key={el.character_name}>
-                                <h4 className="SheetsDemo_h4" >{el.character_name}</h4>
-                                <h4 className="SheetsDemo_h4" >{el.playername}</h4>
-                                <h4 className="SheetsDemo_h4" >{el.race}</h4>
-                                <h4 className="SheetsDemo_h4" >{el.class}</h4>
+                            <div className="SheetsDemo_Character_Container">
+                            <h4 className="SheetsDemo_h4" >{el.character_name}</h4>
+                            <h4 className="SheetsDemo_h4" >{el.playername}</h4>
+                            <h4 className="SheetsDemo_h4" >{el.race}</h4>
+                            <h4 className="SheetsDemo_h4" >{el.class}</h4>
+                            </div>
+                            <div className="SheetsDemo_Button_Container">
                                 <Link to="/">
-                                <button className="SheetsDemo_Button" >Edit</button>
+                                    <button className="SheetsDemo_Button" >Edit</button>
                                 </Link>
                                 <Link to="adventureleague/raceandclass">
-                                <button onClick = {()=> this.deleteBySheet_id(el.sheet_id)} className="SheetsDemo_Button" >Delete</button>
+                                    <button onClick={() => this.deleteBySheet_id(el.sheet_id)} className="SheetsDemo_Button" >Delete</button>
                                 </Link>
-                                <h6 className="SheetsDemo_Sheet_Id" >{el.sheet_id}</h6>
+
+                            </div>
                         </div>
                     )
-                    :
-                    null}
+                        :
+                        null}
                 </div>
             </div>
         )

@@ -98,7 +98,7 @@ persuassion, religion, sleight_of_hand, stealth, survival } = this.props
                                 <div className="Preview_Skills">
                                     <div style={{ backgroundColor: this.props.acrobatics ? "green" : null }} className="Preview_Individual_Skill">Acrobatics</div>
                                     <div style={{ backgroundColor: this.props.arcana ? "green" : null }} className="Preview_Individual_Skill">Arcana</div>
-                                    <div style={{ backgroundColor: this.props.animal_handling ? "green" : null }} className="Preview_Individual_Skill">Animal Handling</div>
+                                    <div style={{ backgroundColor: this.props.animal_handling ? "green" : null }} className="Preview_Individual_Skill">Ani Handle</div>
                                     <div style={{ backgroundColor: this.props.athletics ? "green" : null }} className="Preview_Individual_Skill">Athletics</div>
                                     <div style={{ backgroundColor: this.props.deception ? "green" : null }} className="Preview_Individual_Skill">Deception</div>
                                     <div style={{ backgroundColor: this.props.history ? "green" : null }} className="Preview_Individual_Skill">History</div>
@@ -111,7 +111,7 @@ persuassion, religion, sleight_of_hand, stealth, survival } = this.props
                                     <div style={{ backgroundColor: this.props.performance ? "green" : null }} className="Preview_Individual_Skill">Performance</div>
                                     <div style={{ backgroundColor: this.props.persuassion ? "green" : null }} className="Preview_Individual_Skill">Persuasion</div>
                                     <div style={{ backgroundColor: this.props.religion ? "green" : null }} className="Preview_Individual_Skill">Religion</div>
-                                    <div style={{ backgroundColor: this.props.sleight_of_hand ? "green" : null }} className="Preview_Individual_Skill">Sleight_of_hand</div>
+                                    <div style={{ backgroundColor: this.props.sleight_of_hand ? "green" : null }} className="Preview_Individual_Skill">Sleight</div>
                                     <div style={{ backgroundColor: this.props.stealth ? "green" : null }} className="Preview_Individual_Skill">Stealth</div>
                                     <div style={{ backgroundColor: this.props.survival ? "green" : null }} className="Preview_Individual_Skill">Survival</div>
                                 </div>

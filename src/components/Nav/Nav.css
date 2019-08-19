@@ -4,7 +4,8 @@ a {
 }
 
 .Nav_main {
-    height: 8vh;
+    font-family: 'Metamorphous', cursive;
+    height: 10vh;
     width: 100vw;
 }
 
@@ -18,10 +19,12 @@ a {
 }
 
 .Nav_Builders {
+    position: relative;
+    right: 20px;
     height: 50%;
-    width: 50%;
+    width: 550px;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
 }
 
 .Nav_Links {
@@ -62,8 +65,8 @@ a {
 
 .Login {
     border-radius: 0 10px 0 10px;
-    width: 20%;
-    height: 60%;
+    width: 100px;
+    height: 80%;
     display: flex;
     justify-content: center;
     align-items: center;
@@ -74,28 +77,40 @@ a {
     border-style: solid none none solid;
 }
 
-.dropdown {
-    display: none;
-    height: 145px;
-}
-
 .Nav_container {
-    display: flex;
-    flex-direction: column;
+    display: none;
 }
 
+.Nav_Hamburger:hover {
+    background-color: black;
+    color: white;
+    display: flex;
+}
 
-/* @media(max-width: 950px) {
+@media(max-width: 630px) {
     .Nav_Links {
         display: none;
     }
+    .Nav_Builders {
+        display: flex;
+        justify-content: flex-start;
+    }
     .Nav_Hamburger {
         display: flex;
-        height: 5vh;
+        height: 8vh;
+        width: 80px;
         position: relative;
         bottom: 10px;
+        left: 30px;
+        font-size: 1.6rem;
     }
     .Login {
         height: 80%;
     }
-} */
+}
+
+@media(max-height:500px) {
+    .Nav_main {
+        height: 50px;
+    }
+}

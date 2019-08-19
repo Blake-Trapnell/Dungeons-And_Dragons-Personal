@@ -70,9 +70,34 @@ input {
     font-size: 1.2rem;
 }
 
-@media(max-width: 512px) {
+.Adventure_Button_Container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.Adventure_Cancel_2 {
+    display: none;
+}
+
+@media(max-width: 600px) {
     .Adventure_main {
         height: 100%;
         width: 100%;
+    }
+}
+
+@media(max-width: 500px) {
+    .Adventure_main {
+        flex-direction: column;
+    }
+    .Adventure_Inner_Left {
+        flex-wrap: wrap;
+    }
+    .Adventure_Cancel {
+        display: none;
+    }
+    .Adventure_Cancel_2 {
+        display: flex;
     }
 }

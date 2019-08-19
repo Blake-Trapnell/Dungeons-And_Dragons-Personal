@@ -83,7 +83,7 @@ class RaceAndClass extends Component {
                             <option value="Urchin">Urchin</option>
                         </select>
                         <Link to="/">
-                            <button className="Adventure_Navigation" >Cancel</button>
+                            <button className="Adventure_Navigation Adventure_Cancel" >Cancel</button>
                         </Link>
                     </div>
                     <div className="Adventure_Inner_Right">
@@ -115,7 +115,12 @@ class RaceAndClass extends Component {
                             <option value="Neutral Evil">Neutral Evil</option>
                             <option value="Chaotic Evil">Chaotic Evil</option>
                         </select>
+                        <div className="Adventure_Button_Container">
+                        <Link to="/">
+                            <button className="Adventure_Navigation Adventure_Cancel_2" >Cancel</button>
+                        </Link>
                         <button onClick={this.saveStepOne} className="Adventure_Navigation" >Next</button>
+                        </div>
                     </div>
                 </div>
             </div>
