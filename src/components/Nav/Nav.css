@@ -84,7 +84,8 @@ a {
     flex-direction: column;
 }
 
-@media(max-width: 950px) {
+
+/* @media(max-width: 950px) {
     .Nav_Links {
         display: none;
     }
@@ -97,4 +98,4 @@ a {
     .Login {
         height: 80%;
     }
-}
+} */

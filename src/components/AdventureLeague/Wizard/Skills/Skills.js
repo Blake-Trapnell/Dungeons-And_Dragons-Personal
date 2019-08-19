@@ -41,8 +41,6 @@ class Skills extends Component {
         let backgroundSkills = await axios.get(`/api/sheets/backgroundskills/${this.props.background}`)
        classSkills = classSkills.data
         backgroundSkills = backgroundSkills.data
-        console.log(classSkills)
-        console.log(backgroundSkills)
         for(let i =0; i < classSkills.length; i++) {
             if(classSkills[i].skill === backgroundSkills[0].skill || classSkills[i].skill === backgroundSkills[1].skill) {
                 classSkills.splice(i,1)

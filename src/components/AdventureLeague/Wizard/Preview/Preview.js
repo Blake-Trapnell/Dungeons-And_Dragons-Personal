@@ -1,5 +1,5 @@
 import React, { Component } from "react"
-// import axios from "axios"
+import axios from "axios"
 import { setUser } from "../../../../ducks/reducer"
 import { connect } from "react-redux"
 import "./Preview.css"
@@ -8,6 +8,18 @@ import { Link } from "react-router-dom"
 
 class Preview extends Component {
 componentDidMount(){
+}
+
+addToDatabase = () => {
+    console.log(this.props)
+    const {user_id, characterName, playerName, race, playerClass, background, alignment,
+    str, dex, wis, int, cha, con, acrobatics, arcana, animal_handling, athletics, deception,
+history, insight, intimidation, investigation, medicine, nature, perception, performance,
+persuassion, religion, sleight_of_hand, stealth, survival } = this.props
+    axios.post(`/api/sheets`, {user_id, characterName, playerName, race, playerClass, background, alignment,
+        str, dex, wis, int, cha, con, acrobatics, arcana, animal_handling, athletics, deception,
+    history, insight, intimidation, investigation, medicine, nature, perception, performance,
+    persuassion, religion, sleight_of_hand, stealth, survival })
 }
 
 
@@ -113,7 +125,7 @@ componentDidMount(){
                                 <button className="Abilitypoints_Navigation">Previous</button>
                             </Link>
                             <Link to="/">
-                                <button onClick={this.saveStepThree} className="Abilitypoints_Navigation" >Submit</button>
+                                <button onClick={this.addToDatabase} className="Abilitypoints_Navigation" >Submit</button>
                             </Link>
                         </div>
                     </div>
