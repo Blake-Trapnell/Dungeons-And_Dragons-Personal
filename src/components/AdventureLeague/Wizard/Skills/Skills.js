@@ -287,20 +287,7 @@ class Skills extends Component {
              return
         }
 }
-//  finished() {
-//      const {acrobatics, arcana, animal_handling, athletics, deception, history, insight, intimidation, investigation, medicine,
-//     nature, perception, performance, persuassion, religion, sleight_of_hand, stealth, survival} = this.state
-//     const {user_id, characterName, playerName, playerClass, race, background, alignment, str, dex, wis, int, cha, con} = this.props
-//     if(this.state.amountOfSkills > 0) {
-//         alert('Please select your skills')
-//         return
-//     }
-//     const newSheet = {
-//         user_id, characterName, playerName, playerClass, race, background, alignment, str, dex, wis, int, cha, con,
-//         acrobatics, arcana, animal_handling, athletics, deception, history, insight, intimidation, investigation, medicine,
-//         nature, perception, performance, persuassion, religion, sleight_of_hand, stealth, survival
-//     }
-//  }
+
  saveStepThree =() => {
     const {acrobatics, arcana, animal_handling, athletics, deception, history, insight, intimidation, investigation, medicine,
         nature, perception, performance, persuassion, religion, sleight_of_hand, stealth, survival} = this.state
@@ -337,7 +324,7 @@ class Skills extends Component {
                     <div className="Skills_Checkbox_Container" >
                         { availableSkills ?
                             availableSkills.map(el => (
-                                <div key = {el.skill}>
+                                <div className = "Skills_Checkbox_Text" key = {el.skill}>
                            <input onChange={(e)=> this.handleChange(e)} id="Skills_Checkbox" type="checkbox" name={el.skill} />
                                 <label htmlFor ={el.skill} >{el.skill}</label>
                                 </div>

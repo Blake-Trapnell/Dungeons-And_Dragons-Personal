@@ -37,8 +37,11 @@ class Sheets extends Component {
     }
 
     deleteBySheet_id = (sheetid) => {
-        console.log(sheetid)
         axios.delete(`api/sheets/${sheetid}`)
+
+    }
+
+    editBySheet_id = (sheetid) => {
 
     }
 
@@ -56,7 +59,7 @@ class Sheets extends Component {
                             </div>
                             <div className="SheetsDemo_Button_Container">
                                 <Link to="/">
-                                    <button className="SheetsDemo_Button" >Edit</button>
+                                    <button onClick={()=>this.editBySheet_id(el.sheet_id)} className="SheetsDemo_Button" >Edit</button>
                                 </Link>
                                 <Link to="adventureleague/raceandclass">
                                     <button onClick={() => this.deleteBySheet_id(el.sheet_id)} className="SheetsDemo_Button" >Delete</button>

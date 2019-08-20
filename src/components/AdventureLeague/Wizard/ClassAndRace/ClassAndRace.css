@@ -101,3 +101,12 @@ input {
         display: flex;
     }
 }
+
+@media(max-height: 400px) {
+    .Adventure_Inner_Left {
+        height: 80%;
+    }
+    .Adventure_Inner_Right {
+        height: 80%
+    }
+}
